@@ -199,6 +199,7 @@ if st.session_state.get("authenticated", False):
             st.subheader("Пользователи")
             for key, results in monitoring_data.input.items():
                 st.write(f"Анализатор: {key}")
+                st.write(f"Описание: {result.description}")
                 timestamps = [result.timestamp for result in results]
                 metrics = [result.metric for result in results]
 
@@ -210,6 +211,7 @@ if st.session_state.get("authenticated", False):
             st.subheader("Модель")
             for key, results in monitoring_data.output.items():
                 st.write(f"Анализатор: {key}")
+                st.write(f"Описание: {result.description}")
                 timestamps = [result.timestamp for result in results]
                 metrics = [result.metric for result in results]
 
